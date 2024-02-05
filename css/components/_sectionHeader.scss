@@ -1,0 +1,161 @@
+.sectionHeader {
+    background: url(../img/bg/headerBg.jpg) no-repeat center / cover;
+    transform: rotate(180deg);
+    transform: scaleX(-1);
+
+    .flexBox {
+        transform: scaleX(-1);
+        min-height: 880px;
+        display: flex;
+        align-items: center;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-left: 80px;
+            margin-top: 170px;
+
+            @media screen and (max-width: 940px) {
+                padding-left: 0;
+            }
+
+            @media screen and (max-width: 375px) {
+                align-items: center;
+            }
+
+            h2 {
+                font-size: 35px;
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: 0.5px;
+                color: var(--black2);
+
+                @media screen and (max-width: 767px) {
+                    font-size: 28px;
+                }
+
+                @media screen and (max-width: 440px) {
+                    font-size: 24px;
+                }
+            }
+
+            h1 {
+                font-size: 140px;
+                font-weight: 400;
+                line-height: 140px;
+                color: var(--green);
+                margin-bottom: 16px;
+
+                @media screen and (max-width: 767px) {
+                    font-size: 110px;
+                    line-height: 100px;
+                }
+
+                @media screen and (max-width: 440px) {
+                    font-size: 80px;
+                    line-height: 35px;
+                }
+            }
+
+            .CTA {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: flex-start;
+                width: 334px;
+                height: 56px;
+                font-family: Neucha;
+                font-size: 20px;
+                color: var(--white);
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: 0.5px;
+                background: var(--coral);
+                border: none;
+                border-radius: 25px;
+                position: relative;
+                cursor: pointer;
+                z-index: 3;
+                transition:
+                    padding-left 0.3s ease,
+                    padding-right 0.3s ease;
+
+                &:hover:before {
+                    opacity: 1;
+                }
+                span {
+                    width: 100%;
+                    height: inherit;
+                    background: var(--coral);
+                    border: none;
+                    border-radius: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                }
+
+                &:before {
+                    content: url(/img/bg/Import.svg);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 334px;
+                    height: 56px;
+                    border: none;
+                    border-radius: 25px;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    padding-right: 20px;
+                    background: var(--green);
+                    opacity: 1;
+                    z-index: -1;
+                    transition: opacity 0.3s ease;
+                }
+                @media screen and (min-width: 1024px) {
+                    &:hover {
+                        span {
+                            width: calc(100% - 58px);
+                        }
+                    }
+                }
+            }
+        }
+        .titleImages {
+            position: absolute;
+            right: 80px;
+            bottom: -6px;
+
+            // @media screen and (max-width: 1023px) {
+            //     visibility: hidden;
+
+            //     &.active {
+            //         visibility: visible;
+            //     }
+            // }
+
+            @media screen and (max-width: 940px) {
+                right: 0;
+            }
+
+            @media screen and (max-width: 767px) {
+                .anna {
+                    width: 100px;
+                }
+            }
+
+            .konichiwa {
+                position: absolute;
+                bottom: calc(100% - 30px);
+                right: 85px;
+
+                @media screen and (max-width: 767px) {
+                    width: 100px;
+                    right: 75px;
+                }
+            }
+        }
+    }
+}

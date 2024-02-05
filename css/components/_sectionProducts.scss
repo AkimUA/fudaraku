@@ -1,0 +1,210 @@
+.sectionProducts {
+    overflow: hidden;
+    span {
+        display: block;
+        margin-right: -20px;
+        margin-left: -20px;
+        height: 13px;
+        background: var(--green);
+    }
+
+    .retreat {
+        position: relative;
+
+        .sakura1 {
+            position: absolute;
+            top: -293px;
+            right: 439px;
+        }
+        .sakura2 {
+            position: absolute;
+            top: -232px;
+            right: 267px;
+        }
+        .sakura3 {
+            position: absolute;
+            top: -218px;
+            right: 0px;
+        }
+    }
+    .retreatDown {
+        margin-top: 30px;
+        display: block;
+        margin-right: -20px;
+        margin-left: -20px;
+        background: url(/img/retreat/WAVESMAIN.png) repeat center / contain;
+        height: 160px;
+        @media screen and (max-width: 1023px) {
+            background: url(/img/retreat/WAVESMAIN.png) no-repeat center / cover;
+        }
+        @media screen and (max-width: 600px) {
+            height: 120px;
+        }
+    }
+
+    .productsCollection {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: 1023px) {
+            align-items: center;
+        }
+
+        @media screen and (max-width: 767px) {
+            gap: 0;
+        }
+        @media screen and (max-width: 660px) {
+            align-items: center;
+        }
+
+        @media screen and (max-width: 375px) {
+            gap: 0;
+        }
+
+        h2 {
+            margin-top: 157px;
+            margin-left: 80px;
+            color: var(--coral);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: 88px;
+            font-weight: 400;
+            line-height: 104px;
+            width: max-content;
+
+            @media screen and (max-width: 1023px) {
+                margin-left: 0;
+            }
+            @media screen and (max-width: 600px) {
+                margin-top: 200px;
+                font-size: 70px;
+            }
+        }
+        .slick-list {
+            overflow: hidden;
+            height: 432px;
+            width: 282px;
+            border-radius: 35px;
+            border: 3px solid #09e0ba;
+        }
+
+        /* Лента слайдів */
+        .slick-track {
+            display: block;
+        }
+        .allSliders {
+            margin-top: 132px;
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+
+            @media screen and (max-width: 1360px) {
+                flex-wrap: wrap;
+                &:last-child .slirder4 {
+                    margin-top: 70px;
+                }
+            }
+            @media screen and (max-width: 660px) {
+                gap: 30px;
+                margin-top: 100px;
+            }
+        }
+        .slider {
+            display: flex;
+            position: relative;
+        }
+        .slider .slick-arrow {
+            position: absolute;
+            z-index: 10;
+            font-size: 0;
+            width: 36px;
+            height: 43px;
+            transition: all 0.2s ease;
+        }
+
+        .slider .slick-arrow.slick-prev {
+            bottom: calc(100% + 20px);
+            left: 50%;
+            margin-right: -50%;
+            transform: translateX(-50%);
+            background: url(/img/photoSlirder/Polygon\ 7.svg) 0 0 / 100% no-repeat;
+            border: none;
+            cursor: pointer;
+        }
+        .slider .slick-arrow.slick-next {
+            top: calc(100% + 20px);
+            left: 50%;
+            margin-right: -50%;
+            transform: translateX(-50%);
+            background: url(/img/photoSlirder/Polygon\ 8.svg) 0 0 / 100% no-repeat;
+            border: none;
+            cursor: pointer;
+        }
+        .slider .slick-arrow:hover {
+            filter: hue-rotate(-45deg);
+        }
+        // Фото слайдерів
+        .slider1 .sliderItem:nth-child(2) img {
+            object-position: 57%;
+        }
+        .slider1 .sliderItem:nth-child(4) img {
+            object-position: 33%;
+        }
+
+        .sliderItem {
+            height: 432px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .slider2 {
+            @media screen and (max-width: 633px) {
+                margin-top: 70px;
+            }
+        }
+        .slider3 {
+            @media screen and (max-width: 985px) {
+                margin-top: 70px;
+            }
+        }
+        .slider4 {
+            @media screen and (max-width: 1317px) {
+                margin-top: 70px;
+            }
+        }
+        .sliderContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 61px;
+
+            .description {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h3 {
+                    color: var(--black2);
+                    font-size: 48px;
+                    font-weight: 400;
+                    line-height: 48px;
+                    @media screen and (max-width: 633px) {
+                        font-size: 40px;
+                    }
+                }
+                p {
+                    color: var(--black2);
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 32px;
+                    letter-spacing: 0.5px;
+                    @media screen and (max-width: 633px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

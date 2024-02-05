@@ -1,0 +1,223 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    background: rgba(247, 247, 247, 0.4);
+    transition: all 0.2s ease;
+
+    @media screen and (max-width: 1023px) {
+        height: 50px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 80px;
+        padding-right: 80px;
+        align-items: center;
+
+        @media screen and (max-width: 1023px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .imagine {
+            display: block;
+            width: 88px;
+
+            @media screen and (max-width: 1023px) {
+                width: 49px;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                will-change: transform;
+
+                @media screen and (min-width: 1024px) {
+                    &:hover {
+                        transform: scale(1.2);
+                        box-shadow: 0 0 30px rgba(190, 87, 139, 0.7);
+                    }
+                }
+            }
+        }
+        .titleFud {
+            font-size: 44px;
+            letter-spacing: 14px;
+            color: var(--coral);
+            font-weight: bold;
+            display: none;
+            width: max-content;
+
+            @media screen and (max-width: 1023px) {
+                display: block;
+            }
+            @media screen and (max-width: 490px) {
+                font-size: 30px;
+                letter-spacing: 11px;
+            }
+        }
+
+        .navPanel {
+            display: flex;
+            gap: 59px;
+            align-items: center;
+            justify-content: center;
+
+            .navigation {
+                display: flex;
+                gap: 40px;
+
+                @media screen and (max-width: 1023px) {
+                    flex-direction: column;
+                }
+                li {
+                    list-style-type: none;
+                }
+                li a {
+                    color: var(--black1);
+                    font-size: 24px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    letter-spacing: 0.5px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -9px;
+                        right: -9px;
+                        bottom: -9px;
+                        left: -9px;
+                        border: 2px solid #ef7b73;
+                        border-radius: 25px;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        box-sizing: border-box;
+                        z-index: -1;
+                        opacity: 0;
+                        transition: opacity 0.2s ease;
+                    }
+
+                    @media screen and (min-width: 1024px) {
+                        &:hover::before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            // telefon
+            .tel {
+                color: var(--black1);
+                font-size: 25px;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+                @media screen and (max-width: 1023px) {
+                    display: none;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -9px;
+                    right: -9px;
+                    bottom: -9px;
+                    left: -9px;
+                    border: 2px solid #ef7b73;
+                    border-radius: 25px;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    box-sizing: border-box;
+                    z-index: -1;
+                    opacity: 0;
+                    transition: opacity 0.2s ease;
+                }
+                @media screen and (min-width: 1024px) {
+                    &:hover::before {
+                        opacity: 1;
+                    }
+                }
+            }
+            @media screen and (max-width: 1023px) {
+                position: fixed;
+                display: flex;
+                top: 50px;
+                right: 0;
+                width: 250px;
+                height: 100%;
+                background-color: rgba(252, 162, 199, 0.8);
+                padding-top: 50px;
+                align-items: start;
+                overflow: auto;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(100%);
+                transition: all 0.2s ease;
+                z-index: 2;
+            }
+        }
+        .menuToggle {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0);
+            border: none;
+            flex: none;
+
+            &:before,
+            &:after,
+            span {
+                content: "";
+                position: absolute;
+                width: 80%;
+                height: 7px;
+                background: var(--coral);
+                border-radius: 25px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.2s ease;
+            }
+
+            &:before {
+                content: "";
+                margin-top: -14px;
+            }
+            &:after {
+                content: "";
+                margin-top: 14px;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            .menuToggle {
+                display: none;
+            }
+        }
+    }
+
+    &.active {
+        background: var(--pink2);
+        @media screen and (max-width: 1023px) {
+            .navPanel {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+        }
+        .menuToggle {
+            span {
+                width: 0;
+            }
+            &::before {
+                content: "";
+                margin-top: 0;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &::after {
+                content: "";
+                margin-top: 0;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}

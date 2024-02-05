@@ -1,0 +1,40 @@
+$colors: (
+    mainPink: #ffe8f3,
+    pink2: #ffd7eb,
+    pink3: #fca2c7,
+    coral: #ef7b73,
+    black1: #2d2d2d,
+    black2: #565656,
+    white: #fff,
+    green: #09e0ba
+);
+
+:root {
+    @each $name, $color in $colors {
+        --#{$name + ""}: #{$color};
+    }
+}
+
+.bg- {
+    @each $name, $color in $colors {
+        &#{$name + ""} {
+            background-color: #{$color} !important;
+        }
+    }
+}
+
+.text- {
+    @each $name, $color in $colors {
+        &#{$name + ""} {
+            color: #{$color} !important;
+        }
+    }
+}
+
+.border- {
+    @each $name, $color in $colors {
+        &#{$name + ""} {
+            border-color: #{$color} !important;
+        }
+    }
+}
